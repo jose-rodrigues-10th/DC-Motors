@@ -1,7 +1,7 @@
 // Motor A connections
-int enA = 9;
-int in1 = 8;
-int in2 = 7;
+int enA = 6;
+int in1 = 5;
+int in2 = 4;
 
 
 void setup() {
@@ -17,9 +17,9 @@ void setup() {
 
 void loop() {
   directionControl();
-  delay(1000);
+  delay(750);
   speedControl();
-  delay(1000);
+  delay(750);
 }
 
 // This function lets you control spinning direction of motors
@@ -31,12 +31,12 @@ void directionControl() {
   // Turn on motor A & B
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
-  delay(5000);
+  delay(3750);
   
   // Now change motor directions
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
-  delay(2000);
+  delay(1500);
   
   // Turn off motors
   digitalWrite(in1, LOW);
@@ -52,13 +52,13 @@ void speedControl() {
   // Accelerate from zero to maximum speed
   for (int i = 0; i < 256; i++) {
     analogWrite(enA, i);
-    delay(20);
+    delay(15);
   }
   
   // Decelerate from maximum speed to zero
   for (int i = 255; i >= 0; --i) {
     analogWrite(enA, i);
-    delay(20);
+    delay(15);
   }
   
   // Now turn off motors
