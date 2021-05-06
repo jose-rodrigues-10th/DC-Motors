@@ -1,7 +1,7 @@
 // Motor A connections
-int enA = 9;
-int in1 = 8;
-int in2 = 7;
+int enA = 6;
+int in1 = 5;
+int in2 = 4;
 
 
 void setup() {
@@ -22,15 +22,15 @@ void loop() {
 
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
-  delay(2000);
+  delay(1500);
 
   digitalWrite(in1, LOW);
   digitalWrite(in2, LOW);
-  delay(2000);
+  delay(1500);
   
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
-  delay(2000);
+  delay(1500);
 
   digitalWrite(in1, HIGH);
   digitalWrite(in2, HIGH);
@@ -41,13 +41,13 @@ void loop() {
   
   for (int i = 0; i < 256; i++) {
     analogWrite(enA, i);
-    delay(20);
+    delay(15);
   }
   
 
   digitalWrite(enA, LOW);
 
-  delay(5000);
+  delay(3750);
 
   
   
